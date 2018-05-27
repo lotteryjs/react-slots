@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+      "sourceMap": true,
+      "noImplicitAny": true,
+      "module": "commonjs",
+      "target": "es3",
+      "allowSyntheticDefaultImports": true,
+      "allowJs": true,
+      "jsx": "react",
+      "lib": [
+        "dom",
+        "dom.iterable",
+        "es2015"
+      ]
+    },
+    "include": [
+      "src/**/*",
+      "examples/**/*"
+    ],
+    "exclude": [
+      "node_modules",
+      "src/lib/raf.ts"
+    ],
+    "files": [
+      "./typings/index.d.ts"
+    ]
+}

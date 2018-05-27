@@ -1,0 +1,20 @@
+{
+  "extends": [ "tslint:latest", "tslint-react"],
+  "rules": {
+    "file-header": {
+      "options": ["Copyright \\d{4} lotteryjs.com Technologies, Inc\\. All rights reserved."]
+    },
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "quotemark": [true, "single"],
+    "max-line-length": false,
+    "one-variable-per-declaration": false,
+    "max-classes-per-file": false,
+    "jsx-no-multiline-js": false
+  },
+  "linterOptions": {
+    "exclude": [
+      "src/lib/*.js"
+    ]
+  }
+}
