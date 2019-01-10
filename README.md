@@ -1,10 +1,18 @@
-/*
- * Copyright 2018 lotteryjs.com Technologies, Inc. All rights reserved.
- *
- */
+# react-slots
+a slots machine game component based on [React.js](https://github.com/facebook/react/)
 
+![slots game](https://raw.githubusercontent.com/lotteryjs/slots/master/screenshots.png)
+
+## Installation
+
+use [npm](https://npmjs.org/) to install:
+
+    $ npm install react-slots
+
+## Examples
+```tsx
 import * as React from 'react';
-import SlotsComponent from '../../../src/ReactUI';
+import SlotsComponent from 'react-slots-component';
 
 /**
  * the img of slots
@@ -67,7 +75,18 @@ export class App extends React.PureComponent<any, any> {
             });
         };
         return (
-            <SlotsComponent setAsyncFinalIndex={setAsyncFinalIndex} items={items} elementStyle={elementStyle} activeStyle={activeStyle} button={button} callback={callback}/>
+            <SlotsComponent
+              setAsyncFinalIndex={setAsyncFinalIndex}
+              items={items}
+              elementStyle={elementStyle}
+              activeStyle={activeStyle}
+              button={button}
+              callback={callback}
+            />
         );
     }
 }
+
+```
+# API Documentation
+see [https://techjs.cn/docs/react-slots/index.html](https://techjs.cn/docs/react-slots/index.html)

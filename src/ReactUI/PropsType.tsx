@@ -7,21 +7,21 @@ import * as React from 'react';
  * Button properties.
  */
 export interface IButtonProps {
-    /** 按钮样式名称 */
+    /** Custom button class */
     buttonClassName?: string;
-    /** 按钮自定义样式 */
+    /** Button style */
     buttonStyle?: React.CSSProperties;
-    /** 按钮render回调 */
-    buttonRender?: () => JSX.Element;
+    /** If provided, a button is rendered for this section.  */
+    renderButton?: () => JSX.Element;
 }
 
 /**
  * Active properties.
  */
 interface IActiveProps {
-    /** 转盘元素激活时样式名称 */
+    /** The class of element when is active */
     activeClassName?: string;
-    /** 转盘元素激活时样式 */
+    /** The style of element when is active  */
     activeStyle?: React.CSSProperties;
 }
 
@@ -35,16 +35,25 @@ export interface IElementProps {
  * Grid properties.
  */
 export interface IGridsProps extends IActiveProps, ICallbackProps {
-    /** 转盘元素 */
+    /** The element of slots. */
     items?: JSX.Element[];
-    /** 目标索引，从0开始 */
-    finalIndex: number;
-    /** 超时时间 */
+    /** The index of target element. */
+    finalIndex?: number;
+    /** get index of target element with asynchronous . */
+    setAsyncFinalIndex?: () => number | Promise<number>;
+    /** Will fire when not found target element. */
     timeout?: number;
+    /** Element style  */
+    elementStyle?: React.CSSProperties;
 }
 
 interface ICallbackProps {
-    /** 结束滚动的回调，回调参数：`SUCCESS`为成功，`TIMEOUT`为超时，`ERROR`为异常 */
+    /**
+     * The callback funtion at the end.
+     *
+     * @param {String} type One of `SUCCESS`, `TIMEOUT`, `ERROR`.
+     * @param {number} finalIndex The index of target element.
+     */
     callback?: (args: { type: 'SUCCESS' | 'TIMEOUT' | 'ERROR'; finalIndex?: number }) => any;
 }
 
@@ -52,15 +61,14 @@ interface ICallbackProps {
  * Basic properties.
  */
 export interface ISlotsProps extends IButtonProps, IActiveProps, IGridsProps, ICallbackProps {
-    /** 转盘行数 */
+    /** The number of rows  */
     rows?: number;
-    /** 转盘列数 */
+    /** The number of columns */
     cols?: number;
-    /** 开始按钮 */
+    /** The start button */
     button?: JSX.Element;
-    /** 样式名称 */
+    /** Custom component class */
     className?: string;
-    /** 自定义样式 */
+    /** Component style */
     style?: React.CSSProperties;
-    // renderItem?: (element: IElementProps, index: number) => React.ReactElement<any>;
 }

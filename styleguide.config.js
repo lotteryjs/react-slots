@@ -2,7 +2,8 @@ const path = require('path');
 const glob = require('glob');
 
 module.exports = {
-    title: 'Slots React Docs',
+    title: 'The React Docs of Slots',
+    showUsage: true,
     components: function () {
         return glob.sync(path.resolve(__dirname, 'src/ReactUI/index.tsx'));
     },

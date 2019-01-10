@@ -10,3 +10,12 @@ declare module "*.png" {
     const value: any;
     export = value;
 }
+declare module "is-integer" {
+    const value: any;
+    export = value;
+}
+
+declare module "is-promise" {
+    const value: any;
+    export = value;
+}

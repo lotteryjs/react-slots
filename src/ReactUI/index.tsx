@@ -3,8 +3,8 @@
  */
 
 import * as React from 'react';
-import '../lib/raf';
 import * as ClassNames from 'classnames';
+import '../lib/raf';
 import { ISlotsProps } from './PropsType';
 import Grid from './Grid';
 import { getSpiralMatrixArray } from '../core';

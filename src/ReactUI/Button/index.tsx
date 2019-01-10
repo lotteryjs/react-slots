@@ -12,13 +12,15 @@ const start = () => {
     Emitter.emit('SLOTS.START');
 };
 
-const Button: React.SFC<IButtonProps> = ({ children, buttonClassName, buttonStyle, buttonRender }) => {
+const Button: React.SFC<IButtonProps> = ({ children, buttonClassName, buttonStyle, renderButton }) => {
     const className = ClassNames(Styles.slotsButton, buttonClassName);
-    if (typeof buttonRender === 'function') {
-        const RenderElement = buttonRender();
+    const child = children as React.ReactElement<any>;
+    const style = { ...child.props.style, ...buttonStyle };
+    if (typeof renderButton === 'function') {
+        const RenderElement = renderButton();
         return React.cloneElement(RenderElement, { onClick: start });
     }
-    return <div onClick={start} className={className} style={buttonStyle}>{children}</div>;
+    return React.cloneElement(child, { onClick: start, className, style });
 };
 
 export default Button;

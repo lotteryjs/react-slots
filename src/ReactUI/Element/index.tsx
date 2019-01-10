@@ -4,15 +4,12 @@
 import * as React from 'react';
 import { IElementProps } from '../PropsType';
 
-export default class Element extends React.Component<IElementProps, any> {
-    private static defaultProps: IElementProps = {
-    };
-    public render() {
-        const { style, className, component } = this.props;
-        return (
-            <div className={className} style={style} >
-                {component}
-            </div>
-        );
-    }
-}
+export const PlaceHolderElement = (props: any) => {
+    const { style, className, index } = props;
+    return <div style={style} className={className} />;
+};
+
+export default (props: IElementProps) => {
+    const { style, className, component } = props;
+    return React.cloneElement(component, { className, style });
+};

@@ -1,8 +1,12 @@
 {
-  "name": "slots",
+  "name": "react-slots-component",
   "version": "1.0.0",
-  "description": "a javascript library of the slots machine game.",
-  "main": "index.js",
+  "description": "A slots machine game component based on React.js",
+  "main": "src/ReactUI/index.tsx",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lotteryjs/react-slots"
+  },
   "scripts": {
     "start": "npm run dev",
     "dev": "NODE_ENV=development webpack-dev-server --config webpack.config.dev.js --hot",
@@ -62,6 +66,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "fbemitter": "^2.1.1",
+    "is-promise": "^2.1.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0"
   }
