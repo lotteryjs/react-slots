@@ -7,7 +7,7 @@ a slots machine game component based on [React.js](https://github.com/facebook/r
 
 use [npm](https://npmjs.org/) to install:
 
-    $ npm install react-slots
+    $ npm install react-slots-component
 
 ## Examples
 ```tsx

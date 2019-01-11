@@ -11,7 +11,7 @@
     "start": "npm run dev",
     "dev": "NODE_ENV=development webpack-dev-server --config webpack.config.dev.js --hot",
     "build": "webpack",
-    "styleguidist": "styleguidist",
+    "styleguidist": "styleguidist build --config styleguide.config.js",
     "build-react-docs": "styleguidist server --config styleguide.config.js",
     "test": "jest"
   },
